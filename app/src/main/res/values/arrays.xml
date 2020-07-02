@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major">
+<!--        <item>건축공학과</item>-->
+<!--        <item>건축학과</item>-->
+<!--        <item>경영학부</item>-->
+<!--        <item>국어국문학과</item>-->
+<!--        <item>국제통상학부</item>-->
+<!--        <item>국제학부</item>-->
+<!--        <item>동북아문화산업학부</item>-->
+<!--        <item>로봇학부</item>-->
+<!--        <item>미디어커뮤니케이션학부</item>-->
+<!--        <item>법학부</item>-->
+<!--        <item>산업심리학과</item>-->
+<!--        <item>소프트웨어학부</item>-->
+<!--        <item>수학과</item>-->
+<!--        <item>스포츠융합과학과</item>-->
+<!--        <item>영어산업학과</item>-->
+<!--        <item>전기공학과</item>-->
+        <item>전자공학과</item>
+<!--        <item>전자바이오물리학과</item>-->
+        <item>전자융합공학과</item>
+<!--        <item>전자재료공학과</item>-->
+        <item>전자통신공학과</item>
+<!--        <item>정보융합학부</item>-->
+        <item>컴퓨터정보공학부</item>
+<!--        <item>화학공학과</item>-->
+<!--        <item>화학과</item>-->
+<!--        <item>환경공학과</item>-->
+<!--        <item>행정학과</item>-->
+<!--        <item>건축공학과(대학원)</item>-->
+<!--        <item>건축학과(대학원)</item>-->
+<!--        <item>경영정보학과(대학원)</item>-->
+<!--        <item>경영학과(대학원)</item>-->
+<!--        <item>국어국문학과(대학원)</item>-->
+<!--        <item>국제지역학과(대학원)</item>-->
+<!--        <item>국제통상학과(대학원)</item>-->
+<!--        <item>로봇학과(대학원)</item>-->
+<!--        <item>문화산업학과(대학원)</item>-->
+<!--        <item>법학과(대학원)</item>-->
+<!--        <item>산업심리학과(대학원)</item>-->
+            <item>소프트웨어학부</item>
+<!--        <item>수학과(대학원)</item>-->
+<!--        <item>스포츠융합과학과(대학원)</item>-->
+<!--        <item>영어영문학과(대학원)</item>-->
+<!--        <item>전기공학과(대학원)</item>-->
+<!--        <item>전자공학과(대학원)</item>-->
+<!--        <item>전자바이오물리학과(대학원)</item>-->
+<!--        <item>전자융합공학과(대학원)</item>-->
+<!--        <item>전자재료공학과(대학원)</item>-->
+<!--        <item>전자통신공학과(대학원)</item>-->
+<!--        <item>커뮤니케이션학과(대학원)</item>-->
+        <item>컴퓨터공학과(대학원)</item>
+        <item>컴퓨터과학과(대학원)</item>
+<!--        <item>화학공확과(대학원)</item>-->
+<!--        <item>화학과(대학원)</item>-->
+<!--        <item>환경공학과(대학원)</item>-->
+<!--        <item>행정학과(대학원)</item>-->
+    </string-array>
+
+    <string-array name="year">
+        <item>2014년도</item>
+        <item>2015년도</item>
+        <item>2016년도</item>
+        <item>2017년도</item>
+        <item>2018년도</item>
+        <item>2019년도</item>
+        <item>2020년도</item>
+        <item>2021년도</item>
+        <item>2022년도</item>
+    </string-array>
+
+    <string-array name="term">
+        <item>1학기</item>
+        <item>여름학기</item>
+        <item>2학기</item>
+        <item>겨울학기</item>
+    </string-array>
+
+    <string-array name="graduateArea">
+       <item>일반대학원</item>
+    </string-array>
+
+    <string-array name="universityArea">
+        <item>교양</item>
+        <item>전공</item>
+    </string-array>
+
+    <string-array name="graduateMajor">
+<!--        <item>건축공학과</item>-->
+<!--        <item>건축학과</item>-->
+<!--        <item>경영정보학과</item>-->
+<!--        <item>경영학과</item>-->
+<!--        <item>국어국문학과</item>-->
+<!--        <item>국제지역학과</item>-->
+<!--        <item>국제통상학과</item>-->
+<!--        <item>로봇학과</item>-->
+<!--        <item>문화산업학과</item>-->
+<!--        <item>법학과</item>-->
+<!--        <item>산업심리학과</item>-->
+<!--        <item>수학과)</item>-->
+<!--        <item>스포츠융합과학과</item>-->
+<!--        <item>영어영문학과</item>-->
+<!--        <item>전기공학과</item>-->
+<!--        <item>전자공학과</item>-->
+<!--        <item>전자바이오물리학과</item>-->
+<!--        <item>전자융합공학과</item>-->
+<!--        <item>전자재료공학과</item>-->
+<!--        <item>전자통신공학과</item>-->
+<!--        <item>커뮤니케이션학과</item>-->
+        <item>컴퓨터공학과</item>
+        <item>컴퓨터과학과</item>
+<!--        <item>화학공확과</item>-->
+<!--        <item>화학과</item>-->
+<!--        <item>환경공학과</item>-->
+<!--        <item>행정학과</item>-->
+    </string-array>
+
+    <string-array name="universityRefinementMajor">
+        <item>광운인되기,영어</item>
+        <item>언어와표현</item>
+        <item>정보영역</item>
+        <item>과학과기술</item>
+        <item>인간과철학</item>
+        <item>사회와경제</item>
+        <item>글로벌문화와제2외국어</item>
+        <item>예술과체육</item>
+        <item>실용영어</item>
+        <item>외국어로서의한국어</item>
+        <item>서울권역e-러닝</item>
+        <item>K-MOOC</item>
+      </string-array>
+
+    <string-array name="universityMajor">
+        <!--        <item>건축공학과</item>-->
+        <!--        <item>건축학과</item>-->
+        <!--        <item>경영학부</item>-->
+        <!--        <item>국어국문학과</item>-->
+        <!--        <item>국제통상학부</item>-->
+        <!--        <item>국제학부</item>-->
+        <!--        <item>동북아문화산업학부</item>-->
+        <!--        <item>로봇학부</item>-->
+        <!--        <item>미디어커뮤니케이션학부</item>-->
+        <!--        <item>법학부</item>-->
+        <!--        <item>산업심리학과</item>-->
+        <!--        <item>소프트웨어학부</item>-->
+        <!--        <item>수학과</item>-->
+        <!--        <item>스포츠융합과학과</item>-->
+        <!--        <item>영어산업학과</item>-->
+        <!--        <item>전기공학과</item>-->
+        <item>소프트웨어학부</item>
+        <item>전자공학과</item>
+        <!--        <item>전자바이오물리학과</item>-->
+        <item>전자융합공학과</item>
+        <!--        <item>전자재료공학과</item>-->
+        <item>전자통신공학과</item>
+        <!--        <item>정보융합학부</item>-->
+        <item>컴퓨터정보공학부</item>
+        <!--        <item>화학공학과</item>-->
+        <!--        <item>화학과</item>-->
+        <!--        <item>환경공학과</item>-->
+        <!--        <item>행정학과</item>-->
+
+    </string-array>
+</resources>
