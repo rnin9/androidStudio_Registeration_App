@@ -131,8 +131,6 @@ public class Course {
     }
 
 
-
-
     public Course(int courseID,String courseTitle,  int courseDivide, String courseGrade, int coursePersonnel, int courseRival) {
         this.courseID = courseID;
         this.courseGrade = courseGrade;
@@ -140,6 +138,16 @@ public class Course {
         this.courseDivide = courseDivide;
         this.coursePersonnel = coursePersonnel;
         this.courseRival = courseRival;
+    }
+
+    public Course(int courseID,String courseTitle,  int courseDivide, String courseGrade, int coursePersonnel, int courseRival, int courseCredit) {
+        this.courseID = courseID;
+        this.courseGrade = courseGrade;
+        this.courseTitle = courseTitle;
+        this.courseDivide = courseDivide;
+        this.coursePersonnel = coursePersonnel;
+        this.courseRival = courseRival;
+        this.courseCredit = courseCredit;
     }
 
     public int getCourseRival() {

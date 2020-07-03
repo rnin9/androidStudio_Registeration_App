@@ -36,6 +36,7 @@ public class CourseListAdapter extends BaseAdapter {
     private String userID = MainActivity.userID;
     private Schedule schedule = new Schedule();
     private List<Integer> courseIDList; // courseID 중복체크를 위해.
+    public static int totalCredit= 0;
 
     public CourseListAdapter(Context context, List<Course> courseList, Fragment parent) {
         this.context = context;
@@ -44,6 +45,7 @@ public class CourseListAdapter extends BaseAdapter {
         schedule = new Schedule();
         courseIDList = new ArrayList<Integer>();
         new BackgroundTask().execute();
+        totalCredit = 0;
     }
 
     @Override
@@ -113,6 +115,15 @@ public class CourseListAdapter extends BaseAdapter {
                             .create();
                     dialog.show();
                 }
+                else if(totalCredit + courseList.get(i).getCourseCredit() > 21){
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(parent.getActivity());
+                    AlertDialog dialog = builder.setMessage("21학점을 초과할 수 없습니다.")
+                            .setPositiveButton("다시 시도",null)
+                            .create();
+                    dialog.show();
+
+                }
                 else if(validate == false){
                     AlertDialog.Builder builder = new AlertDialog.Builder(parent.getActivity());
                     AlertDialog dialog = builder.setMessage("시간표가 중복됩니다.")
@@ -135,6 +146,7 @@ public class CourseListAdapter extends BaseAdapter {
                                     dialog.show();
                                     courseIDList.add(courseList.get(i).getCourseID());
                                     schedule.addSchedule(courseList.get(i).getCourseTime());
+                                    totalCredit += courseList.get(i).getCourseCredit();
                                 }
                                 else{
                                     AlertDialog.Builder builder = new AlertDialog.Builder(parent.getActivity());
@@ -204,18 +216,21 @@ public class CourseListAdapter extends BaseAdapter {
         @Override
         public void onPostExecute(String result){
             try{
+                totalCredit = 0;
                 JSONObject jsonObject = new JSONObject(result);     //응답 부분(response) 처리
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;
                 String courseProfessor;
                 String courseTime;
                 int courseID;
+                totalCredit = 0;
 
                 while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     courseID = object.getInt("courseID");
                     courseProfessor = object.getString("courseProfessor");
                     courseTime = object.getString("courseTime");
+                    totalCredit += object.getInt("courseCredit");
                     courseIDList.add(courseID);
                     schedule.addSchedule(courseTime);
                     count++;

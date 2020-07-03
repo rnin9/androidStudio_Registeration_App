@@ -72,7 +72,9 @@ public class StatisticsFragment extends Fragment {
     private ListView courseListView;
     private StatisticsCourseListAdapter adapter;
     private List<Course> courseList;
-    int totalCredit =0;     // 신청한 총 학점 수
+
+    public static  int totalCredit = 0; // 학점 정보
+    public static TextView credit;
 
     @Override
     public void onActivityCreated(Bundle b){
@@ -82,6 +84,9 @@ public class StatisticsFragment extends Fragment {
         adapter = new StatisticsCourseListAdapter(getContext().getApplicationContext(),courseList, this);
         courseListView.setAdapter(adapter);
         new BackgroundTask().execute();
+        totalCredit = 0;
+        credit =(TextView) getView().findViewById(R.id.totalCredit);
+
     }
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
@@ -147,12 +152,12 @@ public class StatisticsFragment extends Fragment {
                     courseTitle = object.getString("courseTitle");
                     coursePersonnel = object.getInt("coursePersonnel");
                     courseRival = object.getInt("COUNT(SCHEDULE.courseID)");
-                    totalCredit += object.getInt("courseCredit");
-                    courseList.add(new Course(courseID, courseTitle, courseDivide, courseGrade, coursePersonnel, courseRival));
+                    int courseCredit = object.getInt("courseCredit");
+                    totalCredit += courseCredit;
+                    courseList.add(new Course(courseID, courseTitle, courseDivide, courseGrade, coursePersonnel, courseRival, courseCredit));
                     count++;
                 }
                 adapter.notifyDataSetChanged();
-                TextView credit = (TextView) getView().findViewById(R.id.totalCredit);
                 credit.setText(totalCredit + "학점");
             }
             catch (Exception e){

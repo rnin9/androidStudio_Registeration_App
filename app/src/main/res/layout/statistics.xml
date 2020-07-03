@@ -57,9 +57,8 @@
                 android:text="1분반"
                 android:id="@+id/courseDivide"
                 android:layout_gravity="center"
-                android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"/>
+                android:padding="2dp"
+                android:textColor="#acef"/>
 
         </LinearLayout>
 
@@ -72,7 +71,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="신청 인원 : 40 /30"
+                android:text="신청인원 : 40/30"
                 android:id="@+id/coursePersonnel"
                 android:layout_gravity="center"
                 android:padding="3dp"
@@ -85,9 +84,10 @@
                 android:text="경쟁률 : 133 %"
                 android:id="@+id/courseRate"
                 android:layout_gravity="center"
-                android:padding="3dp"
+                android:padding="2dp"
                 android:textColor="@color/colorDanger"
-                android:textColorHint="#ffffff"/>
+                android:textColorHint="#ffffff"
+                android:textStyle="italic"/>
 
         </LinearLayout>
     </LinearLayout>
