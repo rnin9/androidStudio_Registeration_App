@@ -69,7 +69,7 @@ public class RankListAdapter extends BaseAdapter {
         }
         else
         {
-            courseGrade.setText(courseList.get(i).getCourseGrade()+"학년");
+            courseGrade.setText(courseList.get(i).getCourseGrade()+"");
         }
         courseTitle.setText(courseList.get(i).getCourseTitle());
         courseCredit.setText(courseList.get(i).getCourseCredit()+"학점");

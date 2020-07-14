@@ -142,16 +142,15 @@ public class StatisticsFragment extends Fragment {
 
     }
 
-    class ByEntire extends AsyncTask<Void, Void, String> {
-
+    class ByEntire extends AsyncTask<Void, Void, String>
+    {
         String target;
 
         @Override
         protected void onPreExecute(){
-            try{
+            try {
                 target = "http://rkdalswn1209.cafe24.com/ByEntire.php";
-            }
-            catch(Exception e){
+            }catch (Exception e){
                 e.printStackTrace();
             }
         }
@@ -159,21 +158,21 @@ public class StatisticsFragment extends Fragment {
         @Override
         protected String doInBackground(Void... voids) {
             try{
-                URL url = new URL(target);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection(); // 해당 서버에 접속하기위한 connection
-                InputStream inputStream = httpURLConnection.getInputStream();   // 넘어오는 결과값들을 그대로 저장
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); // buffer에 담아서 읽게 만들도록 함
+                URL url=new URL(target);
+                HttpURLConnection httpURLConnection=(HttpURLConnection)url.openConnection();
+                InputStream inputStream=httpURLConnection.getInputStream();
+                BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
                 String temp;
-                StringBuilder stringBuilder = new StringBuilder();
-                while((temp = bufferedReader.readLine()) != null){      // buffer에서 받아온 값을 한줄씩 읽음
-                    stringBuilder.append(temp + "\n");
+                StringBuilder stringBuilder=new StringBuilder();
+                while((temp=bufferedReader.readLine())!=null)
+                {
+                    stringBuilder.append(temp+"\n");
                 }
                 bufferedReader.close();
                 inputStream.close();
-                httpURLConnection.disconnect();             // 처리가 끝난후, 연결 해제
-                return stringBuilder.toString().trim();     // 문자열 반환
-            }                                   // 데이터를 얻는 부분
-            catch (Exception e){
+                httpURLConnection.disconnect();
+                return stringBuilder.toString().trim();
+            }catch(Exception e){
                 e.printStackTrace();
             }
             return null;
@@ -185,11 +184,12 @@ public class StatisticsFragment extends Fragment {
         }
 
         @Override
-        public void onPostExecute(String result){
+        public void onPostExecute(String result)
+        {
             try{
-                JSONObject jsonObject = new JSONObject(result);     //응답 부분(response) 처리
-                JSONArray jsonArray = jsonObject.getJSONArray("response");
-                int count = 0;
+                JSONObject jsonObject=new JSONObject(result);
+                JSONArray jsonArray=jsonObject.getJSONArray("response");
+                int count=0;
                 int courseID;
                 String courseGrade;
                 String courseTitle;
@@ -198,18 +198,17 @@ public class StatisticsFragment extends Fragment {
                 int courseDivide;
                 int coursePersonnel;
                 String courseTime;
-
-                while(count < jsonArray.length()){
-                    JSONObject object = jsonArray.getJSONObject(count);
-                    courseID = object.getInt("courseID");
-                    courseGrade = object.getString("courseGrade");
-                    courseDivide = object.getInt("courseDivide");
-                    courseTitle = object.getString("courseTitle");
-                    courseProfessor = object.getString("courseProfessor");
-                    courseCredit = object.getInt("courseCredit");
-                    coursePersonnel = object.getInt("coursePersonnel");
-                    courseTime = object.getString("courseTIme");
-                    rankList.add(new Course(courseID, courseGrade, courseTitle, courseCredit, courseDivide, coursePersonnel, courseTime, courseProfessor));
+                while(count<jsonArray.length()){
+                    JSONObject object=jsonArray.getJSONObject(count);
+                    courseID=object.getInt("courseID");
+                    courseGrade=object.getString("courseGrade");
+                    courseTitle=object.getString("courseTitle");
+                    courseProfessor=object.getString("courseProfessor");
+                    courseCredit=object.getInt("courseCredit");
+                    courseDivide=object.getInt("courseDivide");
+                    coursePersonnel=object.getInt("coursePersonnel");
+                    courseTime=object.getString("courseTime");
+                    rankList.add(new Course(courseID,  courseGrade,  courseTitle,  courseCredit,  courseDivide,  coursePersonnel,  courseTime, courseProfessor));
                     count++;
                 }
                 rankListAdapter.notifyDataSetChanged();
