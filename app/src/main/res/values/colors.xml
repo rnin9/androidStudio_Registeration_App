@@ -10,4 +10,5 @@
     <color name="colorRed">#FF1212 </color>
     <color name="colorSafe">#08C904</color>
     <color name="colorSSafe">#e8c566</color>
+    <color name="colorWinner">#FFD700</color>
 </resources>

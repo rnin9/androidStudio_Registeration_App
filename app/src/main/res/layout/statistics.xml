@@ -6,8 +6,8 @@
     android:orientation="horizontal">
 
     <Button
-        android:layout_width="70dp"
-        android:layout_height="35dp"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="삭제"

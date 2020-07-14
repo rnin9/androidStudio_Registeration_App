@@ -82,6 +82,10 @@ public class StatisticsFragment extends Fragment {
     private ArrayAdapter rankAdapter;
     private Spinner rankSpinner;
 
+    private ListView rankListView;
+    private RankListAdapter rankListAdapter;
+    private List<Course> rankList;
+
    @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
@@ -93,9 +97,15 @@ public class StatisticsFragment extends Fragment {
         totalCredit = 0;
         credit =(TextView) getView().findViewById(R.id.totalCredit);
         rankSpinner = (Spinner) getView().findViewById(R.id.rankSpinner);
-        rankAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.rank, android.R.layout.simple_dropdown_item_1line);
+        rankAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.rank, R.layout.spinner_item);
         rankSpinner.setAdapter(rankAdapter);
-       rankSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        rankSpinner.setPopupBackgroundResource(R.color.colorPrimary);
+        rankListView = (ListView) getView().findViewById(R.id.rankListView);
+        rankList = new ArrayList<Course>();
+        rankListAdapter = new RankListAdapter(getContext().getApplicationContext(), rankList, this);
+        rankListView.setAdapter(rankListAdapter);
+        new ByEntire().execute();
+        rankSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
            @Override
            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                if(rankSpinner.getSelectedItem().equals("전체에서"))
@@ -130,6 +140,84 @@ public class StatisticsFragment extends Fragment {
            }
        });
 
+    }
+
+    class ByEntire extends AsyncTask<Void, Void, String> {
+
+        String target;
+
+        @Override
+        protected void onPreExecute(){
+            try{
+                target = "http://rkdalswn1209.cafe24.com/ByEntire.php";
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try{
+                URL url = new URL(target);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection(); // 해당 서버에 접속하기위한 connection
+                InputStream inputStream = httpURLConnection.getInputStream();   // 넘어오는 결과값들을 그대로 저장
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream)); // buffer에 담아서 읽게 만들도록 함
+                String temp;
+                StringBuilder stringBuilder = new StringBuilder();
+                while((temp = bufferedReader.readLine()) != null){      // buffer에서 받아온 값을 한줄씩 읽음
+                    stringBuilder.append(temp + "\n");
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();             // 처리가 끝난후, 연결 해제
+                return stringBuilder.toString().trim();     // 문자열 반환
+            }                                   // 데이터를 얻는 부분
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        public void onProgressUpdate(Void... values){
+            super.onProgressUpdate();
+        }
+
+        @Override
+        public void onPostExecute(String result){
+            try{
+                JSONObject jsonObject = new JSONObject(result);     //응답 부분(response) 처리
+                JSONArray jsonArray = jsonObject.getJSONArray("response");
+                int count = 0;
+                int courseID;
+                String courseGrade;
+                String courseTitle;
+                String courseProfessor;
+                int courseCredit;
+                int courseDivide;
+                int coursePersonnel;
+                String courseTime;
+
+                while(count < jsonArray.length()){
+                    JSONObject object = jsonArray.getJSONObject(count);
+                    courseID = object.getInt("courseID");
+                    courseGrade = object.getString("courseGrade");
+                    courseDivide = object.getInt("courseDivide");
+                    courseTitle = object.getString("courseTitle");
+                    courseProfessor = object.getString("courseProfessor");
+                    courseCredit = object.getInt("courseCredit");
+                    coursePersonnel = object.getInt("coursePersonnel");
+                    courseTime = object.getString("courseTIme");
+                    rankList.add(new Course(courseID, courseGrade, courseTitle, courseCredit, courseDivide, coursePersonnel, courseTime, courseProfessor));
+                    count++;
+                }
+                rankListAdapter.notifyDataSetChanged();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {

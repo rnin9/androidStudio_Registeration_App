@@ -150,6 +150,17 @@ public class Course {
         this.courseCredit = courseCredit;
     }
 
+    public Course(int courseID, String courseGrade, String courseTitle, int courseCredit, int courseDivide, int coursePersonnel, String courseTime, String courseProfessor) {
+        this.courseID = courseID;
+        this.courseGrade = courseGrade;
+        this.courseTitle = courseTitle;
+        this.courseCredit = courseCredit;
+        this.courseDivide = courseDivide;
+        this.coursePersonnel = coursePersonnel;
+        this.courseTime = courseTime;
+        this.courseProfessor = courseProfessor;
+    }
+
     public int getCourseRival() {
         return courseRival;
     }
