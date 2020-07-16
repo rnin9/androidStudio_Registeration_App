@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 public class SplashScreen extends Activity {
@@ -28,11 +29,20 @@ public class SplashScreen extends Activity {
     }
 
     private void StartAnimations() {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_up);;
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         anim.reset();
         ImageView iv = (ImageView) findViewById(R.id.splash);
         iv.clearAnimation();
         iv.startAnimation(anim);
+
+//        ImageView iv2 = (ImageView) findViewById(R.id.splash2);
+//        iv2.clearAnimation();
+//        iv2.startAnimation(anim);
+
+        anim = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+        TextView tv =(TextView) findViewById(R.id.splash_text);
+        tv.clearAnimation();
+        tv.startAnimation(anim);
 
         splashTread = new Thread() {
             @Override
