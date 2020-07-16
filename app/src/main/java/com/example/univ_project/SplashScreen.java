@@ -20,7 +20,7 @@ public class SplashScreen extends Activity {
         window.setFormat(PixelFormat.RGBA_8888);
     }
 
-    Thread splashTread;
+    Thread splashThread;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class SplashScreen extends Activity {
         tv.clearAnimation();
         tv.startAnimation(anim);
 
-        splashTread = new Thread() {
+        splashThread = new Thread() {
             @Override
             public void run() {
                 try {
@@ -66,6 +66,6 @@ public class SplashScreen extends Activity {
                 }
             }
         };
-        splashTread.start();
+        splashThread.start();
     }
 }
