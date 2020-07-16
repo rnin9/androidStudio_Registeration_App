@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorBackground"
     tools:context=".CourseFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -106,8 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/courseListView"
-            android:dividerHeight="10dp"
             android:divider="#ffffff"
+            android:dividerHeight="10dp"
             android:padding="5dp">
 
         </ListView>

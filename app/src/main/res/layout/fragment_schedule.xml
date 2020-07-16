@@ -19,7 +19,7 @@
 
             <com.example.univ_project.AutoResizeTextView
                 android:text=""
-                android:layout_width="40dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/ic_assignment_black_24dp"
                 android:drawableLeft="@drawable/ic_assignment_black_24dp"
@@ -91,15 +91,15 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="8"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
                 android:gravity="right"
-                android:textSize="15dp"
                 android:paddingRight="1dp"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold"
 
                 />
 
@@ -202,16 +202,15 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="9"
-                android:layout_width="40dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
                 android:gravity="right"
-                android:textSize="15dp"
                 android:paddingRight="1dp"
-                />
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <com.example.univ_project.AutoResizeTextView
                 android:text="월"
@@ -312,16 +311,15 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="10:30"
-                android:layout_width="40dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
                 android:gravity="right"
-                android:textSize="15dp"
                 android:paddingRight="1dp"
-                />
+                android:text="2"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <com.example.univ_project.AutoResizeTextView
                 android:text="월"
@@ -422,7 +420,7 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="12"
+                android:text="3"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -529,7 +527,7 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="1:30"
+                android:text="4"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -636,7 +634,7 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="3"
+                android:text="5"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -742,7 +740,7 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="4:30"
+                android:text="6"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -954,7 +952,7 @@
             android:layout_weight="1">
 
             <com.example.univ_project.AutoResizeTextView
-                android:text="7:30"
+                android:text="7"
                 android:layout_width="24dp"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"

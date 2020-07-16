@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 notice.setVisibility(View.GONE);       // LinearLayout이 해당 fragment로 보일수 있게함.
-                courseButton.setBackgroundColor(Color.parseColor("#e33629"));
-                statisticsButton.setBackgroundColor(Color.parseColor("#ff4d40"));
-                scheduleButton.setBackgroundColor(Color.parseColor("#ff4d40"));
+                courseButton.setBackgroundColor(Color.parseColor("#77212E"));
+                statisticsButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                scheduleButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new CourseFragment());
@@ -73,9 +73,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 notice.setVisibility(View.GONE);       // LinearLayout이 해당 fragment로 보일수 있게함.
-                courseButton.setBackgroundColor(Color.parseColor("#ff4d40"));
-                statisticsButton.setBackgroundColor(Color.parseColor("#e33629"));
-                scheduleButton.setBackgroundColor(Color.parseColor("#ff4d40"));
+                courseButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                statisticsButton.setBackgroundColor(Color.parseColor("#77212E"));
+                scheduleButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new StatisticsFragment());
@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 notice.setVisibility(View.GONE);       // LinearLayout이 해당 fragment로 보일수 있게함.
-                courseButton.setBackgroundColor(Color.parseColor("#ff4d40"));
-                statisticsButton.setBackgroundColor(Color.parseColor("#ff4d40"));
-                scheduleButton.setBackgroundColor(Color.parseColor("#e33629"));
+                courseButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                statisticsButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                scheduleButton.setBackgroundColor(Color.parseColor("#77212E"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new ScheduleFragment());
