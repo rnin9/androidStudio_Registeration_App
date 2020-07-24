@@ -24,7 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" 총 학점"
-            android:textColor="@color/colorWarning"/>
+            android:textColor="#378bd4"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,8 +37,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0학점"
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/totalCredit"/>
+            android:textColor="@color/colorRed"
+            android:id="@+id/totalCredit"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"

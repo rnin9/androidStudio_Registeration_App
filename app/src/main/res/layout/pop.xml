@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_live_help_black_24dp"
+        android:drawableLeft="@drawable/ic_live_help_black_24dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="어플리케이션 정보"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_build_black_24dp"
+        android:drawableLeft="@drawable/ic_build_black_24dp"
+        android:padding="5dp"
+        android:text=" 버전 : 0.1. Ver"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_security_black_24dp"
+        android:drawableLeft="@drawable/ic_security_black_24dp"
+        android:padding="5dp"
+        android:text=" 개발자 : 강민주 (컴퓨터 공학과)"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/ic_public_black_24dp"
+        android:drawableLeft="@drawable/ic_public_black_24dp"
+        android:padding="5dp"
+        android:text=" 홈페이지 : https://www.kw.ac.kr"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_assignment_ind_black_24dp"
+            android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
+            android:padding="5dp"
+            android:text=" 개발자 정보"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.example.univ_project.CircleImageView
+                android:src="@drawable/admin"
+                android:id="@+id/imageView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="강민주"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="컴퓨터공학과 14학번"
+                    android:textColor="#000000"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rkdalswn1209@kw.ac.kr"
+                    android:textColor="#000000"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
