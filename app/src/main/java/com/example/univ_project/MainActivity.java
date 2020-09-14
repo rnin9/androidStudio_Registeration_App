@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private NoticeListAdapter adapter;
     private List<Notice> noticeList;            //class 멤버 변수
     public static String userID;
+    public static String userEmail;
+    public static String userGender;
+    public static String userMajor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로 고정
 
         userID = getIntent().getStringExtra("userID");
+        userEmail = getIntent().getStringExtra("userEmail");
+        userGender = getIntent().getStringExtra("userGender");
+        userMajor = getIntent().getStringExtra("userMajor");
+
 
         noticeListView = (ListView) findViewById(R.id.noticeListView);
         noticeList = new ArrayList<Notice>();
@@ -50,9 +58,8 @@ public class MainActivity extends AppCompatActivity {
         final Button courseButton = (Button) findViewById(R.id.courseButton);
         final Button statisticsButton = (Button) findViewById(R.id.statisticsButton);
         final Button scheduleButton = (Button) findViewById(R.id.scheduleButton);
+        final Button myInfoButton = (Button) findViewById(R.id.myInfoButton);
         final LinearLayout notice = (LinearLayout) findViewById(R.id.notice);
-
-
 
 
         courseButton.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 courseButton.setBackgroundColor(Color.parseColor("#77212E"));
                 statisticsButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 scheduleButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                myInfoButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new CourseFragment());
@@ -76,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 courseButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 statisticsButton.setBackgroundColor(Color.parseColor("#77212E"));
                 scheduleButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                myInfoButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new StatisticsFragment());
@@ -90,9 +99,25 @@ public class MainActivity extends AppCompatActivity {
                 courseButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 statisticsButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 scheduleButton.setBackgroundColor(Color.parseColor("#77212E"));
+                myInfoButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new ScheduleFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        myInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                notice.setVisibility(View.GONE);       // LinearLayout이 해당 fragment로 보일수 있게함.
+                courseButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                statisticsButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                scheduleButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                myInfoButton.setBackgroundColor(Color.parseColor("#77212E"));
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new MyInfoFragment());
                 fragmentTransaction.commit();
             }
         });

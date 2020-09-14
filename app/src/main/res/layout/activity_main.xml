@@ -54,7 +54,21 @@
             android:background="@color/colorPrimary"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="8dp"/>
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/myInfoButton"
+            android:text="내 정보"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"/>
 
     </LinearLayout>
 
