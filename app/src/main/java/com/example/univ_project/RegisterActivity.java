@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 dialog.show();
                                 idText.setEnabled(false);
                                 validate =true;
-                                idText.setBackgroundColor(Color.parseColor("#8C8C8C"));
+                                idText.setBackgroundColor(Color.parseColor("#d9d5ca"));
                                 validateButton.setBackgroundColor(Color.parseColor("#8C8C8C"));
 
                             }

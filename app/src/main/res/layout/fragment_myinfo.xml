@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
@@ -20,6 +20,7 @@
         android:drawableLeft="@drawable/ic_assignment_ind_black_24dp"
         android:gravity="center"
         android:padding="5dp"
+        android:fontFamily="@font/nuri"
         android:text=" 내 정보"
 
         android:textColor="@color/colorPrimaryDark"
@@ -36,6 +37,7 @@
         android:drawableLeft="@drawable/ic_build_black_24dp"
         android:padding="5dp"
         android:text=" 강민주"
+        android:fontFamily="@font/nuri"
         android:id="@+id/myInfoID"
         android:textColor="#ffffff"
         android:textSize="15dp"
@@ -48,6 +50,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/nuri"
         android:drawableStart="@drawable/ic_security_black_24dp"
         android:drawableLeft="@drawable/ic_security_black_24dp"
         android:padding="5dp"
@@ -69,6 +72,7 @@
         android:layout_marginRight="20dp"
         android:padding="5dp"
         android:text=" rkd@kw.ac.kr"
+        android:fontFamily="@font/nuri"
         android:id="@+id/myInfoEmail"
         android:textColor="#ffffff"
         android:textSize="15dp"
@@ -100,18 +104,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/round_shape"
-                    android:backgroundTint="@color/colorText"
-                    android:text="광운대학교"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:text="KW HOME"
+                    android:fontFamily="@font/hansans"
                     android:textColor="#ffffff"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    />
 
                 <Button
                     android:id="@+id/kwKlasButton"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/round_shape"
-                    android:backgroundTint="@color/colorText"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:text="KLAS"
+                    android:fontFamily="@font/hansans"
                     android:textColor="#ffffff"
                     android:textSize="20dp" />
 
@@ -129,8 +136,9 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/round_shape"
-                    android:backgroundTint="@color/colorText"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:text="학사일정"
+                    android:fontFamily="@font/hansans"
                     android:textColor="#ffffff"
                     android:textSize="20dp" />
 
@@ -138,7 +146,8 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/round_shape"
-                    android:backgroundTint="@color/colorText"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:fontFamily="@font/hansans"
                     android:text="강의평가"
                     android:textColor="#ffffff"
                     android:textSize="20dp" />
@@ -150,19 +159,19 @@
             android:layout_width="120dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/logo3"
-            android:background="@drawable/circle_shape"/>
+            android:src="@drawable/logo2"/>
     </FrameLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/logoutButton"
         android:text="로그아웃"
+        android:fontFamily="@font/nexonlv"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textSize="18dp"
         android:background="@drawable/round_shape"
-        android:backgroundTint="@color/colorGray"
+        android:backgroundTint="@color/colorSSafe"
         android:layout_marginBottom="5dp"/>
 
 </LinearLayout>

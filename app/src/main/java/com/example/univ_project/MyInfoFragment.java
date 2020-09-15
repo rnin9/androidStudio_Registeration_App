@@ -111,7 +111,7 @@ public class MyInfoFragment extends Fragment {
         });
 
         Button kwHomepage = (Button)getView().findViewById(R.id.kwHomepageButton);
-        Button kwSchedule = (Button)getView().findViewById(R.id.kwHomepageButton);
+        Button kwSchedule = (Button)getView().findViewById(R.id.kwScheduleButton);
         Button kwKlas = (Button)getView().findViewById(R.id.kwKlasButton);
 
 

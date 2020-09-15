@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".LoginActivity">
-
+    tools:context=".LoginActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="광운대학교"
+                android:fontFamily="@font/ohsquare"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
                 android:textStyle="bold"
@@ -41,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="수강 신청 도우미"
+                android:fontFamily="@font/nexonlv"
                 android:textColor="#ffffff"
                 android:textSize="23dp"
                 android:textStyle="bold"
@@ -56,30 +60,32 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:hint=" ID"
+                android:drawablePadding="3dp"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorGray"
                 android:id="@+id/idText"
-                android:drawableStart="@drawable/ic_person_black_24dp"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:drawableStart="@drawable/custom_id_icon"
+                android:drawableLeft="@drawable/custom_id_icon"
                 android:layout_marginTop="50dp"
-                android:background="@color/colorText"/>
+                android:background="@drawable/custom_input"/>
 
             <EditText
                 android:inputType="textPassword"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
+                android:drawablePadding="3dp"
                 android:hint=" PW"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorGray"
                 android:id="@+id/passwordText"
-                android:drawableStart="@drawable/ic_lock_outline_black_24dp"
-                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawableStart="@drawable/custom_pw_icon"
+                android:drawableLeft="@drawable/custom_pw_icon"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorText"/>
+                android:background="@drawable/custom_input"/>
             <Button
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"

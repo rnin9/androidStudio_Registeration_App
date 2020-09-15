@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="수강신청 도우미"
+        android:fontFamily="@font/nexonlv"
         android:textSize="30dp"
         android:layout_marginTop="60dp"
         android:id="@+id/splash_text"
