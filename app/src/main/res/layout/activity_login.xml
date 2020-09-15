@@ -88,7 +88,8 @@
                 android:text="Login"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="@color/colorPrimaryDark"
                 android:id="@+id/loginButton"
                 android:layout_marginTop="10dp"/>
 

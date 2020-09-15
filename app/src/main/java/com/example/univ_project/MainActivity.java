@@ -43,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로 고정
 
         userID = getIntent().getStringExtra("userID");
-        userEmail = getIntent().getStringExtra("userEmail");
-        userGender = getIntent().getStringExtra("userGender");
-        userMajor = getIntent().getStringExtra("userMajor");
-
-
         noticeListView = (ListView) findViewById(R.id.noticeListView);
         noticeList = new ArrayList<Notice>();
 

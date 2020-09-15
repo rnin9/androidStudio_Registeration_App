@@ -1,12 +1,19 @@
 package com.example.univ_project;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -68,11 +75,9 @@ public class MyInfoFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     public static TextView ID;
     public static TextView Email;
-    public static TextView Gender;
-    public static TextView Major;
+    public static TextView MajorGender;
 
     @Override
     public void onActivityCreated(Bundle b){
@@ -81,8 +86,67 @@ public class MyInfoFragment extends Fragment {
 
         ID = (TextView) getView().findViewById(R.id.myInfoID);
         Email = (TextView) getView().findViewById(R.id.myInfoEmail);
-        Gender = (TextView) getView().findViewById(R.id.myInfoGender);
-        Major = (TextView) getView().findViewById(R.id.myInfoMajor);
+        MajorGender = (TextView) getView().findViewById(R.id.myInfoMajorGender);
+        Button logoutButton = (Button)getView().findViewById(R.id.logoutButton);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                AlertDialog dialog = builder.setMessage("로그아웃 하시겠습니까? ")
+                        .setPositiveButton("예", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(getActivity(), "로그인 화면으로 이동합니다", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+
+                            }
+                        })
+                        .setNegativeButton("아니오",null)
+                        .create();
+                        dialog.show();
+            }
+        });
+
+        Button kwHomepage = (Button)getView().findViewById(R.id.kwHomepageButton);
+        Button kwSchedule = (Button)getView().findViewById(R.id.kwHomepageButton);
+        Button kwKlas = (Button)getView().findViewById(R.id.kwKlasButton);
+
+
+        kwHomepage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.kw.ac.kr"));
+                startActivity(intent);
+            }
+        });
+
+        kwSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.kw.ac.kr/ko/life/bachelor_calendar.jsp"));
+                startActivity(intent);
+            }
+        });
+
+        kwKlas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://klas.kw.ac.kr"));
+                startActivity(intent);
+            }
+        });
 
         new BackgroundTask().execute();
     }
@@ -149,8 +213,7 @@ public class MyInfoFragment extends Fragment {
                     myEmail = object.getString("userEmail");
                     ID.setText(" "+ myID);
                     Email.setText(" "+ myEmail);
-                    Gender.setText(" "+ myGender);
-                    Major.setText(" "+ myMajor);
+                    MajorGender.setText(" "+ myMajor + " (" + myGender+")");
                     count++;
                   }
 
