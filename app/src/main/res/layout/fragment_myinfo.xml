@@ -151,6 +151,7 @@
                     android:layout_height="100dp"
                     android:background="@drawable/round_shape"
                     android:backgroundTint="@color/colorPrimaryDark"
+                    android:id="@+id/kwEvaluation"
                     android:fontFamily="@font/hansans"
                     android:text="강의평가"
                     android:textColor="#ffffff"

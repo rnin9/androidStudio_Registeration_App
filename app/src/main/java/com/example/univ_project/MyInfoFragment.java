@@ -113,7 +113,7 @@ public class MyInfoFragment extends Fragment {
         Button kwHomepage = (Button)getView().findViewById(R.id.kwHomepageButton);
         Button kwSchedule = (Button)getView().findViewById(R.id.kwScheduleButton);
         Button kwKlas = (Button)getView().findViewById(R.id.kwKlasButton);
-
+        Button kwEvaluation = (Button)getView().findViewById(R.id.kwEvaluation);
 
         kwHomepage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +145,16 @@ public class MyInfoFragment extends Fragment {
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://klas.kw.ac.kr"));
                 startActivity(intent);
+            }
+        });
+
+
+        kwEvaluation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "강의평가로 이동합니다", Toast.LENGTH_SHORT).show();
+                Intent EvalIntent = new Intent(getActivity(),EvaluationSearchActivity.class);
+                getActivity().startActivity(EvalIntent);
             }
         });
 
