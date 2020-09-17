@@ -67,8 +67,15 @@ public class EvaluationSearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(EvaluationSearchActivity.this, evalArrayList.get(position).getEvalTitle()+"를 클릭하셨습니다", Toast.LENGTH_SHORT).show();
+                String evalTitle = evalArrayList.get(position).getEvalTitle();
+                String evalProfessor = evalArrayList.get(position).getEvalProfessor();
+                String evalMajor = evalArrayList.get(position).getEvalMajor();
 
+                Intent intent = new Intent(EvaluationSearchActivity.this, EstimationActivity.class); // 성공시 이동
+                intent.putExtra("EstimateTitle",evalTitle);
+                intent.putExtra("EstimateProfessor",evalProfessor);
+                intent.putExtra("EstimateMajor",evalMajor);
+                EvaluationSearchActivity.this.startActivity(intent);
             }
         });
     }

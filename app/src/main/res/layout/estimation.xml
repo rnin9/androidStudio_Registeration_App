@@ -8,28 +8,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/evalLink">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/colorPrimary">
+            android:background="@color/colorBackground"
+            >
 
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3"
+                android:stepSize="0.5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/estimationRating"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="강의 제목"
-                android:id="@+id/evalTitle"
+                android:text="2014년"
+                android:id="@+id/estimationYear"
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:textSize="20dp"/>
+                android:textSize="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1학기 수강자"
+                android:id="@+id/estimationTerm"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="10dp"/>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,21 +66,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="교수님 이름"
-                android:id="@+id/evalProfessor"
+                android:text="이 수업을 추천합니다!"
+                android:id="@+id/estimationContent"
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textColor="#000000"
-                android:textStyle="bold"/>
+                />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(컴퓨터공학과)"
-                android:id="@+id/evalMajor"
-                android:layout_gravity="center"
-                android:padding="3dp"
-                android:textColor="#000000"/>
 
         </LinearLayout>
         <LinearLayout

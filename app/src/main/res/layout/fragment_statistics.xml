@@ -51,14 +51,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#ffffff"
+        android:background="@color/colorBackground"
         android:layout_margin="10dp">
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/courseListView"
-            android:divider="#ffffff"
+            android:divider="@color/colorBackground"
             android:dividerHeight="10dp"
             android:padding="5dp"/>
     </LinearLayout>
@@ -93,14 +93,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="@color/colorBackground"
         android:layout_margin="10dp">
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/rankListView"
-            android:divider="#ffffff"
+            android:divider="@color/colorBackground"
             android:dividerHeight="10dp"
             android:padding="5dp"/>
     </LinearLayout>
