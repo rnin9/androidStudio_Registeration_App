@@ -34,7 +34,6 @@ public class EvaluationListAdapter extends BaseAdapter {
 
     private Context context;
     private List<Evaluation> evalList;
-    private List<Integer> courseIDList; // courseID 중복체크를 위해.
     public static int evalCount= 0;
 
     public EvaluationListAdapter(Context context, List<Evaluation> evalList) {

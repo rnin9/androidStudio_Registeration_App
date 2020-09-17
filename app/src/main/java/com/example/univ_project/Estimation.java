@@ -26,7 +26,7 @@ public class Estimation {
         this.estimationContent = estimationContent;
     }
 
-    public Estimation(Double estimationRating, String estimationYear, String estimationTerm, String estimationContent) {
+    public Estimation(String estimationRating, String estimationYear, String estimationTerm, String estimationContent) {
         this.estimationRating = estimationRating;
         this.estimationYear = estimationYear;
         this.estimationTerm = estimationTerm;
@@ -34,15 +34,15 @@ public class Estimation {
     }
 
 
-    public void setEstimationRating(Double estimationRating) {
+    public void setEstimationRating(String estimationRating) {
         this.estimationRating = estimationRating;
     }
 
-    public Double getEstimationRating() {
+    public String getEstimationRating() {
         return estimationRating;
     }
 
-    Double estimationRating;   //강의별점
+    String estimationRating;   //강의별점
     String estimationYear; // 강의평 평가년도
     String estimationTerm; // 강의평 평가학기
    String estimationContent;  // 강의평

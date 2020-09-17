@@ -54,16 +54,17 @@ public class EstimationActivity extends AppCompatActivity {
         estM.setText(estimateMajor);
         estP.setText(estimateProfessor+" 교수님");
 
-        estimationListView =(ListView)findViewById(R.id.estimationListView);
-        estimationList = new ArrayList<Estimation>();
-        adapter = new EstimationListAdapter(getApplicationContext(), estimationList);
-        estimationListView.setAdapter(adapter);                 // adpater, list 설정
 
         final LinearLayout estH = (LinearLayout)findViewById(R.id.estimationHeader);
         final Button estimationBackButton = (Button) findViewById(R.id.estimationBackButton);
         final Button estimationWritingButton = (Button) findViewById(R.id.estimationWritingButton);
         final Button estimationListButton = (Button) findViewById(R.id.estimationListButton);
 
+
+        estimationListView =(ListView)findViewById(R.id.estimationListView);
+        estimationList = new ArrayList<Estimation>();
+        adapter = new EstimationListAdapter(getApplicationContext(), estimationList);
+        estimationListView.setAdapter(adapter);                 // adpater, list 설정
 
 
 
@@ -86,11 +87,10 @@ public class EstimationActivity extends AppCompatActivity {
                 estH.setVisibility(view.GONE);
                 estimationListButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 estimationWritingButton.setBackgroundColor(Color.parseColor("#77212E"));
-
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment, new MyInfoFragment());
-//                fragmentTransaction.commit();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentEstimate, new EstimationWriteFragment());
+                fragmentTransaction.commit();
             }
         });
 
@@ -144,11 +144,10 @@ public class EstimationActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(result);     //응답 부분(response) 처리
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;
-                Double rating = 0.0;
-                String estYear,estTerm,estContent;           // 모든 공지사항 list 추가
+                String estYear,estTerm,estContent,rating;           // 모든 공지사항 list 추가
                 while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
-                    rating = object.getDouble("estRating");
+                    rating = object.getString("estRating");
                     estContent = object.getString("estContent");
                     estTerm = object.getString("estTerm");
                     estYear = object.getString("estYear");
