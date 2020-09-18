@@ -20,9 +20,26 @@
         android:gravity="center"
         android:paddingRight="10dp">
 
+        <Button
+            android:id="@+id/evalSearchBackButton"
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/colorBackground"
+            android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+            android:drawableLeft="@drawable/ic_arrow_back_black_24dp"
+            android:fontFamily="@font/nexonlv"
+            android:paddingLeft="5dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:paddingTop="5dp"/>
         <EditText
             android:id="@+id/evalSearch"
-            android:layout_width="280dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
@@ -34,8 +51,7 @@
             android:padding="10dp"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorGray"
-            android:layout_marginBottom="1dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginBottom="1dp"/>
 
         <Button
             android:layout_width="60dp"

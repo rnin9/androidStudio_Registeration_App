@@ -154,6 +154,7 @@ public class MyInfoFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "강의평가로 이동합니다", Toast.LENGTH_SHORT).show();
                 Intent EvalIntent = new Intent(getActivity(),EvaluationSearchActivity.class);
+                EvalIntent.putExtra("backupID",MainActivity.userID);
                 getActivity().startActivity(EvalIntent);
             }
         });

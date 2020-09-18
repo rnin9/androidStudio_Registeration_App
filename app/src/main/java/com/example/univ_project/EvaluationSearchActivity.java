@@ -39,14 +39,17 @@ public class EvaluationSearchActivity extends AppCompatActivity {
     private static String evaluationProfessor;
     private AlertDialog dialog;
     private ArrayList<Evaluation> evalArrayList;
+    public static String backupID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evalsearch);
         final EditText evalSearchText = (EditText) findViewById(R.id.evalSearch);
         final Button evalSearchButton = (Button) findViewById(R.id.evalSearchButton);
+        final Button evalSearchBackButton = (Button) findViewById(R.id.evalSearchBackButton);
 
 
+        backupID = getIntent().getStringExtra("backupID");
         evalListView =(ListView)findViewById(R.id.evalSearchListView);
         evalArrayList = new ArrayList<Evaluation>();
         adapter = new EvaluationListAdapter(getApplicationContext(), evalArrayList);
@@ -75,9 +78,19 @@ public class EvaluationSearchActivity extends AppCompatActivity {
                 intent.putExtra("EstimateTitle",evalTitle);
                 intent.putExtra("EstimateProfessor",evalProfessor);
                 intent.putExtra("EstimateMajor",evalMajor);
+                intent.putExtra("EstimateUser",backupID);
                 EvaluationSearchActivity.this.startActivity(intent);
             }
         });
+
+        evalSearchBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EvaluationSearchActivity.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+    });
     }
     @Override
     protected void onStop(){

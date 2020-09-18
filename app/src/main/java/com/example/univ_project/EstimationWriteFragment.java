@@ -2,6 +2,7 @@ package com.example.univ_project;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,14 +12,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -102,6 +107,9 @@ public class EstimationWriteFragment extends Fragment {
         writeYearAdapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_dropdown_item, dataY);
         writeTermAdapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_dropdown_item, dataT);
 
+        final TextView writingThanks= (TextView) getView().findViewById(R.id.writingThanks);
+        final LinearLayout writeLayout1 = (LinearLayout) getView().findViewById(R.id.writeLayout1);
+        final LinearLayout writeLayout2 = (LinearLayout) getView().findViewById(R.id.writeLayout2);
 
         writeYearSpinner.setAdapter(writeYearAdapter);
         writeTermSpinner.setAdapter(writeTermAdapter);
@@ -110,16 +118,18 @@ public class EstimationWriteFragment extends Fragment {
         final RatingBar estWRating =(RatingBar)getView().findViewById(R.id.estimationWriteRating);
         Button completeButton = (Button)getView().findViewById(R.id.estimationCompleteButton);
 
-            completeButton.setOnClickListener(new View.OnClickListener() {
+
+        completeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         final String writeTitle = EstimationActivity.estimateTitle;
                         final String writeProfessor = EstimationActivity.estimateProfessor;
-                        final String writeMajor = EstimationActivity.estimateMajor;
+                        final String writeUser = EstimationActivity.estimateUser;
                         String writeYear = writeYearSpinner.getSelectedItem().toString();
                         String writeTerm = writeTermSpinner.getSelectedItem().toString();
                         final String writeContext = estText.getText().toString();
-                        String estRating = String.valueOf(estWRating.getRating());
+                        final String estRating = String.valueOf(estWRating.getRating());
+
                         Response.Listener<String> responseListener = new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -132,9 +142,12 @@ public class EstimationWriteFragment extends Fragment {
                                                 .setPositiveButton("확인",null)
                                                 .create();
                                         dialog.show();
-//                                        Intent intent = new Intent(getActivity(),EstimationActivity.class);
-//                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                        startActivity(intent);
+                                        estText.setVisibility(View.GONE);
+                                        estWRating.setVisibility(View.GONE);
+                                        writingThanks.setText("\uD83D\uDCDD 작성해 주셔서 감사합니다!");
+                                        writingThanks.setTextSize(25);
+                                        writeLayout1.setVisibility(View.INVISIBLE);
+                                        writeLayout2.setVisibility(View.INVISIBLE);
 
                                     }
                                     else{
@@ -150,7 +163,7 @@ public class EstimationWriteFragment extends Fragment {
                                 }
                             }
                         };
-                        WriteRequest writeRequest = new WriteRequest(writeTitle,writeProfessor,estRating,writeYear,writeTerm, writeContext, responseListener);
+                        WriteRequest writeRequest = new WriteRequest(writeUser,writeTitle,writeProfessor,estRating,writeYear,writeTerm, writeContext, responseListener);
                         RequestQueue queue = Volley.newRequestQueue(getActivity());
                         queue.add(writeRequest);
                     }

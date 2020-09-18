@@ -15,7 +15,8 @@
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:paddingRight="5dp">
+        android:paddingRight="5dp"
+        android:id="@+id/writeLayout1">
 
 
         <TextView
@@ -63,6 +64,7 @@
             android:fontFamily="@font/nexonlv"
             android:textStyle="bold"
             android:layout_marginBottom="5dp"
+            android:id="@+id/writingThanks"
             />
         <RatingBar
             android:layout_width="wrap_content"
@@ -111,12 +113,14 @@
 
         </LinearLayout>
     </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:id="@+id/writeLayout2">
 
     <Button
         android:id="@+id/estimationCompleteButton"

@@ -42,7 +42,7 @@
             android:drawableLeft="@drawable/ic_comment_black_24dp"
             android:id="@+id/estimationListButton"
             android:fontFamily="@font/nexonlv"
-            android:text="강의평 목록"
+            android:text="내 강의평"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:textSize="16dp"

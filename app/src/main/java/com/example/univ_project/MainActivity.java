@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -31,18 +32,16 @@ public class MainActivity extends AppCompatActivity {
     private NoticeListAdapter adapter;
     private List<Notice> noticeList;            //class 멤버 변수
     public static String userID;
-    public static String userEmail;
-    public static String userGender;
-    public static String userMajor;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 세로 고정
-
         userID = getIntent().getStringExtra("userID");
+
+       if(userID == null)
+            userID = EvaluationSearchActivity.backupID;
         noticeListView = (ListView) findViewById(R.id.noticeListView);
         noticeList = new ArrayList<Notice>();
 

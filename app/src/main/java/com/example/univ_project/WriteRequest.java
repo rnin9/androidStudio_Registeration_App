@@ -11,9 +11,10 @@ public class WriteRequest extends StringRequest {
     final static private String URL ="http://rkdalswn1209.cafe24.com/EstimationWriting.php";
     private Map<String, String> parameters;
 
-    public WriteRequest(String estTitle, String estProfessor, String estRating, String estYear, String estTerm, String estContent, Response.Listener<String> listener){
+    public WriteRequest(String estUser, String estTitle, String estProfessor, String estRating, String estYear, String estTerm, String estContent, Response.Listener<String> listener){
         super(Method.POST, URL, listener, null);
         parameters = new HashMap<>();
+        parameters.put("estimateUser", estUser);
         parameters.put("estimateTitle", estTitle);
         parameters.put("estimateProfessor", estProfessor);
         parameters.put("estimateRating", estRating);
