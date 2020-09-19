@@ -108,11 +108,16 @@ public class EstimationWriteFragment extends Fragment {
         writeTermAdapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_dropdown_item, dataT);
 
         final TextView writingThanks= (TextView) getView().findViewById(R.id.writingThanks);
+        final TextView writingTitle= (TextView) getView().findViewById(R.id.estimationWriteTitle);
+        final TextView writingProfessor= (TextView) getView().findViewById(R.id.estimationWriteProfessor);
+
         final LinearLayout writeLayout1 = (LinearLayout) getView().findViewById(R.id.writeLayout1);
         final LinearLayout writeLayout2 = (LinearLayout) getView().findViewById(R.id.writeLayout2);
 
         writeYearSpinner.setAdapter(writeYearAdapter);
         writeTermSpinner.setAdapter(writeTermAdapter);
+        writingTitle.setText(EstimationActivity.estimateTitle);
+        writingProfessor.setText(EstimationActivity.estimateProfessor+" 교수님");
 
         final EditText estText = (EditText)getView().findViewById(R.id.estimationWritingContent);
         final RatingBar estWRating =(RatingBar)getView().findViewById(R.id.estimationWriteRating);

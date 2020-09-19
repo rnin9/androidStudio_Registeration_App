@@ -8,6 +8,7 @@
     tools:context=".CourseFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <RadioGroup
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -37,30 +38,38 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:paddingRight="10dp">
+        android:paddingRight="5dp"
+        >
 
         <Spinner
-            android:layout_width="110dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
+            android:dropDownWidth="135dp"
+            android:paddingLeft="10dp"
             android:id="@+id/yearSpinner">
+        </Spinner>
+
+        <Spinner
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:dropDownWidth="125dp"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/termSpinner">
+
         </Spinner>
 
         <Spinner
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/termSpinner">
-
-        </Spinner>
-
-        <Spinner
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:dropDownWidth="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="5dp"
             android:id="@+id/areaSpinner">
 
         </Spinner>
@@ -97,6 +106,7 @@
             android:id="@+id/searchButton"
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

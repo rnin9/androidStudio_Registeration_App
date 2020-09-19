@@ -80,7 +80,6 @@ public class EstimationMyListFragment extends Fragment {
         new BackgroundTask().execute();
 
         TextView estN = (TextView)getView().findViewById(R.id.estimationMyName);
-
         estimationListView =(ListView)getView().findViewById(R.id.estimationListView);
         estimationList = new ArrayList<EstimationMy>();
         adapter = new EstimationMyListAdapter(getContext().getApplicationContext(), estimationList);
@@ -140,14 +139,15 @@ public class EstimationMyListFragment extends Fragment {
 
         @Override
         public void onPostExecute(String result){
-
+               String SaveMajor="";
 
             try{
                 JSONObject jsonObject = new JSONObject(result);     //응답 부분(response) 처리
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;
-                String estYear,estTerm,estContent,rating,estTitle,estProfessor;           // 모든 공지사항 list 추가
-              while(count < jsonArray.length()){
+                String estYear,estTerm,estContent,rating,estTitle,estProfessor,estMajor;           // 모든 공지사항 list 추가
+
+                while(count < jsonArray.length()){
                     JSONObject object = jsonArray.getJSONObject(count);
                     estTitle =object.getString("estMyTitle");
                     estProfessor = object.getString("estMyProfessor");
@@ -155,13 +155,16 @@ public class EstimationMyListFragment extends Fragment {
                     estContent = object.getString("estMyContent");
                     estTerm = object.getString("estMyTerm");
                     estYear = object.getString("estMyYear");
+                    estMajor = object.getString("estMyMajor");
                     EstimationMy estimation = new EstimationMy(estTitle,estProfessor,rating, estYear,estTerm, estContent);
-
                     estimationList.add(estimation);
                     adapter.notifyDataSetChanged();
                     count++;
+                    SaveMajor = estMajor;
                 }
 
+                final TextView estM = (TextView)getView().findViewById(R.id.estimationMyMajor);
+                estM.setText(SaveMajor);
 //                if(count==0){
 //                    rating = object.getInt("estRating");
 //                    estContent = object.getString("estContent");
@@ -174,6 +177,7 @@ public class EstimationMyListFragment extends Fragment {
             catch (Exception e){
                 e.printStackTrace();
             }
+
 
         }
 

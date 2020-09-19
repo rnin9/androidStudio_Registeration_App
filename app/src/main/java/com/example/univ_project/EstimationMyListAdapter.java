@@ -57,7 +57,7 @@ public class EstimationMyListAdapter extends BaseAdapter {
         estRating.setRating(Float.parseFloat(estList.get(i).getEstMyRating()));
 
         estTitle.setText(estList.get(i).getEstTitle());
-        estProfessor.setText(estList.get(i).getEstProfessor());
+        estProfessor.setText(estList.get(i).getEstProfessor()+"교수님");
         estYear.setText(estList.get(i).getEstMyYear());
         estTerm.setText(estList.get(i).getEstMyTerm()+" 수강");
         estContent.setText(estList.get(i).getEstMyContent());

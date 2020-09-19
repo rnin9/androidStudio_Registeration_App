@@ -120,12 +120,12 @@ public class CourseFragment extends Fragment {
 
                     areaAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.universityArea, android.R.layout.simple_spinner_dropdown_item);
                     areaSpinner.setAdapter(areaAdapter);
-                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityRefinementMajor, android.R.layout.simple_dropdown_item_1line);
+                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityRefinementMajor, android.R.layout.simple_spinner_dropdown_item);
                     majorSpinner.setAdapter((majorAdapter));
                 } else if(courseUniversity.equals("대학원")){
                     areaAdapter = ArrayAdapter.createFromResource(getActivity(), R.array.graduateArea, android.R.layout.simple_spinner_dropdown_item);
                     areaSpinner.setAdapter(areaAdapter);
-                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graduateMajor, android.R.layout.simple_dropdown_item_1line);
+                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graduateMajor, android.R.layout.simple_spinner_dropdown_item);
                     majorSpinner.setAdapter((majorAdapter));
                 }
             }
@@ -136,15 +136,15 @@ public class CourseFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 if(areaSpinner.getSelectedItem().equals("교양")){
-                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityRefinementMajor, android.R.layout.simple_dropdown_item_1line);
+                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityRefinementMajor, android.R.layout.simple_spinner_dropdown_item);
                     majorSpinner.setAdapter((majorAdapter));
                 }
                 if(areaSpinner.getSelectedItem().equals("전공")){
-                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityMajor, android.R.layout.simple_dropdown_item_1line);
+                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityMajor, android.R.layout.simple_spinner_dropdown_item);
                     majorSpinner.setAdapter((majorAdapter));
                 }
                 if(areaSpinner.getSelectedItem().equals("일반대학원")){
-                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graduateMajor, android.R.layout.simple_dropdown_item_1line);
+                    majorAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graduateMajor, android.R.layout.simple_spinner_dropdown_item);
                     majorSpinner.setAdapter((majorAdapter));
                 }
             }
