@@ -34,39 +34,48 @@
             android:textStyle="bold"
             android:paddingTop="5dp"/>
 
-        <Button
-            android:layout_width="90dp"
+
+        <ImageButton
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableStart="@drawable/ic_comment_black_24dp"
-            android:drawableLeft="@drawable/ic_comment_black_24dp"
+            android:src="@drawable/ic_comment_black_24dp"
             android:id="@+id/estimationListButton"
             android:fontFamily="@font/nexonlv"
-            android:text="내 강의평"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:textSize="16dp"
             android:background="@color/colorPrimary"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="13dp"
             android:layout_marginRight="5dp"
-            android:padding="7dp"/>
-
-        <Button
-            android:layout_width="110dp"
+            android:padding="7dp"
+            />
+        <ImageButton
+            android:layout_width="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableStart="@drawable/ic_create_black_24dp"
-            android:drawableLeft="@drawable/ic_create_black_24dp"
-            android:id="@+id/estimationWritingButton"
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:id="@+id/estimationMyListButton"
             android:fontFamily="@font/nexonlv"
-            android:text="새 강의평 작성"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:textSize="16dp"
             android:background="@color/colorPrimary"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="5dp"
+            android:padding="7dp"
+            />
+
+
+        <ImageButton
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/estimationWritingButton"
+            android:fontFamily="@font/nexonlv"
+            android:src="@drawable/ic_create_black_24dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="13dp"
             android:layout_marginRight="5dp"
             android:padding="7dp"/>
     </LinearLayout>

@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -61,8 +62,9 @@ public class EstimationActivity extends AppCompatActivity {
 
         final LinearLayout estH = (LinearLayout)findViewById(R.id.estimationHeader);
         final Button estimationBackButton = (Button) findViewById(R.id.estimationBackButton);
-        final Button estimationWritingButton = (Button) findViewById(R.id.estimationWritingButton);
-        final Button estimationListButton = (Button) findViewById(R.id.estimationListButton);
+        final ImageButton estimationWritingButton = (ImageButton) findViewById(R.id.estimationWritingButton);
+        final ImageButton estimationMyListButton = (ImageButton) findViewById(R.id.estimationMyListButton);
+        final ImageButton estimationListButton = (ImageButton) findViewById(R.id.estimationListButton);
 
 
         estimationListView =(ListView)findViewById(R.id.estimationListView);
@@ -74,14 +76,34 @@ public class EstimationActivity extends AppCompatActivity {
         estimationListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                estimationListView.setVisibility(v.GONE);
+                estH.setVisibility(v.GONE);
                 estimationListButton.setBackgroundColor(Color.parseColor("#77212E"));
                 estimationWritingButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                estimationMyListButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentEstimate, new EstimationFragment());
+                fragmentTransaction.commit();
+            }
+        });
+
+        estimationMyListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                estimationListView.setVisibility(view.GONE);
+                estH.setVisibility(view.GONE);
+                estimationListButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                estimationWritingButton.setBackgroundColor(Color.parseColor("#BA1C19"));
+                estimationMyListButton.setBackgroundColor(Color.parseColor("#77212E"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentEstimate, new EstimationMyListFragment());
                 fragmentTransaction.commit();
             }
         });
+
+
 
         estimationWritingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +112,7 @@ public class EstimationActivity extends AppCompatActivity {
                 estH.setVisibility(view.GONE);
                 estimationListButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 estimationWritingButton.setBackgroundColor(Color.parseColor("#77212E"));
+                estimationMyListButton.setBackgroundColor(Color.parseColor("#BA1C19"));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentEstimate, new EstimationWriteFragment());

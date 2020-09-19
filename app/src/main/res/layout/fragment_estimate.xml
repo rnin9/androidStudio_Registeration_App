@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context=".EstimationFragment">
+
+
+        <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="8dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="소프트웨어 공학"
+                    android:id="@+id/estimationAllTitle"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/ohsquare"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nexonlv"
+                    android:id="@+id/estimationAllProfessor"
+                    android:text="이기훈교수님"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp"
+                    android:paddingLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nexonlv"
+                    android:id="@+id/estimationAllMajor"
+                    android:text="컴퓨터공학과"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/estimationAllListView"
+                android:layout_margin="10dp"
+                android:dividerHeight="10dp"
+                android:divider="@color/colorBackground"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragmentEstimate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
+</LinearLayout>

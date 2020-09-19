@@ -72,8 +72,6 @@ public class EstimationListAdapter extends BaseAdapter {
         estYear.setText(estList.get(i).getEstimationYear());
         estTerm.setText(estList.get(i).getEstimationTerm()+" 수강자");
         estContent.setText(estList.get(i).getEstimationContent());
-
-
         return v;
     }
 }
